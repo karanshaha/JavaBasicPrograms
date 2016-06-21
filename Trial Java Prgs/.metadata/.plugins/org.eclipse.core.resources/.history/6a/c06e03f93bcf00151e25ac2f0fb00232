@@ -1,0 +1,10 @@
+
+public class AnnotationPojo {
+	
+	@myAnnotation(value="true" , validate="abc")
+	public String a;
+	
+	@myAnnotation()
+	public String b;
+
+}

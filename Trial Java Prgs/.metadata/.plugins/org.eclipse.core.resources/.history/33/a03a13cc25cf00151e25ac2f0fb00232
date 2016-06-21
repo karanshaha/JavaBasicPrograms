@@ -1,0 +1,30 @@
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Set;
+
+import oracle.net.aso.h;
+
+
+public class HashMapExample {
+	
+	public static void main(String s[]){
+		HashMap<String, String> hashMap = new HashMap<String,String>();
+		
+		hashMap.put(null, "Karan");
+		hashMap.put("ku", "Kunal");
+		
+		Set<String> set = hashMap.keySet();
+		Iterator<String> it = set.iterator();
+		
+		while (it.hasNext()) {
+			String s1 = it.next();
+			String s2 = hashMap.get(s1);
+			System.out.println(s1+" dddd"+s2);
+			
+			//hashMap.put("pa", "parth");
+					
+			
+		}
+	}
+
+}

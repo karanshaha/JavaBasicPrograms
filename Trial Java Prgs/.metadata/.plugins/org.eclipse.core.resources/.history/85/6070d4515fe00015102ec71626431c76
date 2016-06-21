@@ -1,0 +1,15 @@
+package com.java.concepts;
+
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+public class ExecuterServiceExample1 {
+	public static void main(String s){
+		ExecutorService service = Executors.newFixedThreadPool(10);
+	    for (int i =0; i<100; i++){
+	       // service.submit(new Task(i));
+	    }
+	}
+}
+
+

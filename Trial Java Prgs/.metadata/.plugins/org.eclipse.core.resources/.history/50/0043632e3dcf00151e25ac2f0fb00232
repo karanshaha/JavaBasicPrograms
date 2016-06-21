@@ -1,0 +1,56 @@
+import java.lang.reflect.Field;
+
+
+
+public class EmbedAnnotation {
+	
+	/*@myAnnotation(value="true" , validate="abc")
+	public String a;
+	
+	@myAnnotation()
+	public String b;*/
+	
+	
+	public void test(Object obj) throws NoSuchMethodException, SecurityException, NoSuchFieldException{
+	/*	Class<? extends EmbedAnnotation> obj = this.getClass();
+		Method meth = obj.getMethod("test");
+		myAnnotation ano = meth.getAnnotation(myAnnotation.class);
+		System.out.println(ano.key());
+		System.out.println(ano.value());*/
+		/*Object obj = obj.getClass();*/
+		//Field field = obj.getClass().getDeclaredField("a");
+		//Method[] method = obj.getDeclaredMethods();
+		/*myAnnotation o1 =(myAnnotation) field.getAnnotation(myAnnotation.class);
+		
+		if(o1.value().equals("true")){
+			System.out.println("o1"+o1.value());	
+		}
+		
+		
+		
+		Field field1 = obj.getClass().getDeclaredField("b");
+		myAnnotation o2 = (myAnnotation)field1.getAnnotation(myAnnotation.class);
+		if(o2.value().equals("true")){
+			System.out.println("o2"+o2.value());	
+		}*/
+		
+		Field[] fields = obj.getClass().getFields();
+		for(Field f : fields){
+			myAnnotation o1 =(myAnnotation) f.getAnnotation(myAnnotation.class);
+			if(o1.value().equals("true")){
+				System.out.println("Value is ....true");
+			}
+			if(o1.validate().equals("false")){
+				System.out.println("Validated");
+			}
+		}
+				
+	}
+	
+	public static void main(String s[]) throws NoSuchMethodException, SecurityException, NoSuchFieldException{
+		EmbedAnnotation obj = new  EmbedAnnotation();
+		AnnotationPojo p = new AnnotationPojo();
+		obj.test(p);
+	}
+
+}

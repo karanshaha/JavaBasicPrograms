@@ -1,0 +1,6 @@
+
+public class Father extends GranFather{
+	public void getAge(){
+		System.out.println("Father Age 50");
+	}
+}

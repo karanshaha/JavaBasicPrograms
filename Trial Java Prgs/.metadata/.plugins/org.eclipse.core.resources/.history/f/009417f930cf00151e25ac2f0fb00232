@@ -1,0 +1,44 @@
+import java.lang.reflect.Field;
+
+
+
+public class EmbedAnnotation {
+	
+	@myAnnotation(value="true")
+	String a;
+	
+	@myAnnotation()
+	String b;
+	
+	
+	public void test() throws NoSuchMethodException, SecurityException, NoSuchFieldException{
+	/*	Class<? extends EmbedAnnotation> obj = this.getClass();
+		Method meth = obj.getMethod("test");
+		myAnnotation ano = meth.getAnnotation(myAnnotation.class);
+		System.out.println(ano.key());
+		System.out.println(ano.value());*/
+		Class<? extends EmbedAnnotation> obj = this.getClass();
+		Field field = obj.getDeclaredField("a");
+		//Method[] method = obj.getDeclaredMethods();
+		myAnnotation o1 =(myAnnotation) field.getAnnotation(myAnnotation.class);
+		
+		if(o1.value().equals("true")){
+			System.out.println("o1"+o1.value());	
+		}
+		
+		
+		
+		Field field1 = obj.getDeclaredField("b");
+		myAnnotation o2 = (myAnnotation)field1.getAnnotation(myAnnotation.class);
+		if(o2.value().equals("true")){
+			System.out.println("o2"+o2.value());	
+		}
+				
+	}
+	
+	public static void main(String s[]) throws NoSuchMethodException, SecurityException, NoSuchFieldException{
+		EmbedAnnotation obj = new  EmbedAnnotation();
+		obj.test();
+	}
+
+}

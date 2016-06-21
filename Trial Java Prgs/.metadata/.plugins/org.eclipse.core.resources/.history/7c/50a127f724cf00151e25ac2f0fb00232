@@ -1,0 +1,13 @@
+
+public class Child extends Father{
+	public void getAge(){
+		System.out.println("Child Age 10");
+		super.getAge();
+		
+	}
+	
+	public static void main(String s[]){
+		Father c = new Child();
+		c.getAge();
+	}
+}

@@ -1,0 +1,112 @@
+package com.java.concepts;
+
+public class EqualityCheck {
+	
+	public void StringCompareConcept(){
+		String s = "kk";
+		String s1 = new String(s);
+		
+		
+		if(s == s1){
+			System.out.println("Reference is Same");
+		}
+		
+		if(s.equals(s1)){
+			System.out.println("Content is same");
+		}
+		
+		String s2 = new String("Karan");
+		String s3 = new String("Karan");
+		
+		if(s2 == s3){
+			System.out.println("Reference is Same");
+		}
+		
+		if(s2.equals(s3)){
+			System.out.println("Content is same");
+		}
+		
+		String s4 = s3;
+		if(s3 == s4){
+			System.out.println("Reference is Same");
+		}
+		
+		if(s3.equals(s4)){
+			System.out.println("Content is same");
+		}
+		
+		String s5 = "kk";
+		if(s == s5){
+			System.out.println("Reference is Same");
+		}
+		
+		if(s.equals(s5)){
+			System.out.println("Content is same");
+		}
+		
+	}
+	
+	public void IntegerCompareConcept(){
+		Integer i = 101;
+		Integer i2 = 101;
+		
+		if(i == i2){
+			System.out.println("Reference is Same");
+		}
+		
+		if(i.equals(i2)){
+			System.out.println("Content is same");
+		}
+		
+		Integer i3 = new Integer(100);
+		Integer i4 = new Integer(100);
+		
+		if(i4 == i3){
+			System.out.println("Reference is Same");
+		}
+		
+		if(i4.equals(i3)){
+			System.out.println("Content is same");
+		}
+		
+		
+		Integer i5 = i3;
+		if(i5 == i3){
+			System.out.println("Reference is Same");
+		}
+		
+		if(i5.equals(i3)){
+			System.out.println("Content is same");
+		}
+		
+		int i7 = 5;
+		Integer i6 = i7;
+			
+		if(i7 == i6){
+			System.out.println("Reference is Same");
+		}
+		
+		if(i6.equals(i7)){
+			System.out.println("Content is Same");
+		}
+		
+		int i8 = i6;
+		if(i8 == i6){
+			System.out.println("Reference is Same");
+		}
+		
+		if(i6.equals(i8)){
+			System.out.println("Content is Same");
+		}
+		
+	}
+	
+	
+	public static void main(String s[]) {
+		EqualityCheck o1 = new EqualityCheck();
+		//o1.StringCompareConcept();
+		o1.IntegerCompareConcept();
+	}
+	
+
+}

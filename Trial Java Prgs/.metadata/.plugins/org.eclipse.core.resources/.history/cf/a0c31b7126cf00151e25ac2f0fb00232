@@ -1,0 +1,21 @@
+
+public class DemoObj {
+	
+	public void test(Object o){
+		System.out.println("In obj");			
+		}
+	
+	public void test(Integer s){
+		System.out.println("In Integer");
+	}
+	
+	public void test(int s){
+		System.out.println("In int");
+	}
+	public static void main(String args[]){
+		DemoObj dobj = new DemoObj();
+		Integer d= 1 ;
+		dobj.test(d);
+	}
+
+}
